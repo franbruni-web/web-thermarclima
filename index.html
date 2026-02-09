@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermarclima | Calefacción Central e Ingeniería</title>
+    
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0E08A0',
+                        accent: '#AA0B1A',
+                        neutralBg: '#F9F9F9',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Barra de desplazamiento personalizada */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #0E08A0; }
+        ::-webkit-scrollbar-thumb:hover { background: #AA0B1A; }
+
+        .brand-logo {
+            filter: grayscale(1);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        .brand-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        .header-scrolled {
+            background-color: white !important;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+        }
+        
+        .header-scrolled .nav-link { color: #1f2937 !important; }
+        .header-scrolled .nav-link:hover { color: #AA0B1A !important; }
+        .header-scrolled .mobile-menu-btn { color: #0E08A0 !important; }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-neutralBg font-sans text-gray-800">
+
+    <!-- Navbar -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#inicio" class="flex items-center">
+                <!-- LOGO: Reemplazar logo.png en tu carpeta -->
+                <img src="img/logo.png" alt="Logo Thermarclima" class="h-20 w-auto object-contain">
+            </a>
+            
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider">
+                <a href="#inicio" class="nav-link text-[#242021] hover:text-accent transition-colors">Inicio</a>
+                <a href="#servicios" class="nav-link text-[#242021] hover:text-accent transition-colors">Servicios</a>
+                <a href="#proyectos" class="nav-link text-[#242021] hover:text-accent transition-colors">Proyectos</a>
+                <a href="#contacto" class="nav-link text-[#242021] hover:text-accent transition-colors">Contacto</a>
+            </nav>
+
+            <button id="menu-toggle" class="md:hidden mobile-menu-btn text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-primary text-white flex flex-col items-center justify-center space-y-8 text-2xl font-bold uppercase md:hidden">
+        <button id="menu-close" class="absolute top-6 right-6 text-4xl">&times;</button>
+        <a href="#inicio" class="hover:text-accent">Inicio</a>
+        <a href="#servicios" class="hover:text-accent">Servicios</a>
+        <a href="#proyectos" class="hover:text-accent">Proyectos</a>
+        <a href="#contacto" class="hover:text-accent">Contacto</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- IMAGEN HERO: Reemplazar hero1.jpg en tu carpeta -->
+        <div id="hero-bg" class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('img/hero1.jpg');">
+            <div class="absolute inset-0 bg-primary/70 mix-blend-multiply"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center text-white">
+            <h1 class="text-4xl md:text-7xl font-extrabold mb-4 tracking-tight animate-fade-in-up">
+                THERMARCLIMA CALEFACCIÓN
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-10 max-w-2xl mx-auto opacity-90 animate-fade-in-up" style="animation-delay: 0.2s;">
+                Tu clima ideal, nuestra especialidad en ingeniería térmica.
+            </p>
+            <div class="animate-fade-in-up" style="animation-delay: 0.4s;">
+                <a href="#contacto" class="inline-block bg-accent hover:bg-red-800 text-white font-bold py-4 px-10 rounded shadow-lg transition-all transform hover:scale-105 active:scale-95 uppercase tracking-widest text-sm">
+                    Solicitar Cotización
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+<section id="servicios" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 z-0"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 bg-red-50 rounded-full blur-3xl opacity-50 z-0"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h3 class="text-accent font-bold uppercase tracking-widest mb-4 text-sm">Nuestras Soluciones</h3>
+                <h2 class="text-4xl md:text-5xl font-black text-primary mb-6">Tu clima ideal, nuestra especialidad</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                
+                <div class="group bg-neutralBg p-10 rounded-3xl hover:bg-white hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-100 w-24 h-24 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:bg-accent group-hover:opacity-10 transition-colors"></div>
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl text-primary shadow-sm mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Calefacción Central</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Especialistas en sistemas de <strong>piso radiante</strong> y radiadores. Instalación de calderas de alta eficiencia para garantizar el máximo confort con el menor consumo.
+                    </p>
+                </div>
+
+                <div class="group bg-neutralBg p-10 rounded-3xl hover:bg-white hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-100 w-24 h-24 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:bg-accent group-hover:opacity-10 transition-colors"></div>
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl text-primary shadow-sm mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Diseño de instalación y Balance Térmico</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Realizamos cálculos precisos de cargas térmicas. Optimizamos la selección de equipos para evitar gastos innecesarios de energía.
+                    </p>
+                </div>
+
+                <div class="group bg-neutralBg p-10 rounded-3xl hover:bg-white hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-100 w-24 h-24 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:bg-accent group-hover:opacity-10 transition-colors"></div>
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl text-primary shadow-sm mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Servicio Técnico Especializado</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Asistencia técnica rápida y profesional en toda la <strong>Costa Atlántica</strong> (Partidos de Pinamar y Villa Gesell). Mantenimiento preventivo y correctivo de equipos.
+                    </p>
+                </div>
+
+                <div class="group bg-neutralBg p-10 rounded-3xl hover:bg-white hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-100 w-24 h-24 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:bg-accent group-hover:opacity-10 transition-colors"></div>
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl text-primary shadow-sm mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Instalaciones para Edificios</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Solución llave en mano: Diseño, provisión e instalación completa. Abarcamos <strong>Calefacción Central, Gas, Sanitaria, Incendio, Cloaca y Presurización</strong> para grandes desarrollos residenciales.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="py-20 bg-neutralBg">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold text-primary mb-12 uppercase tracking-wide">Marcas Líderes que Confían en Nosotros</h3>
+            <!-- MARCAS: Reemplazar cada archivo .png en tu carpeta -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center opacity-80">
+                
+                <img src="img/marca-caldaia.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+                
+                <img src="img/marca-saladillo.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+                
+                <img src="img/marca-daikin.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+                
+                <img src="img/marca-giacomini.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+                
+                <img src="img/marca-awaduct.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+                
+                <img src="img/marca-vulcano.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+                
+                <img src="img/marca-motorarg.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+                
+                <img src="img/marca-ansal.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio (6 Obras) -->
+    <section id="proyectos" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Nuestros Trabajos</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+            </div>
+
+            <!-- OBRAS: Reemplazar obra1.jpg hasta obra6.jpg en tu carpeta -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-video">
+                    <img src="img/obra1.jpg" alt="Piso Radiante Cariló" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/0E08A0/FFFFFF?text=OBRA+1'">
+                    <div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold text-xl uppercase tracking-widest px-4 text-center">Piso Radiante Residencial - Cariló</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-video">
+                    <img src="img/obra2.jpg" alt="Piso Radiante Pinamar Norte" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/0E08A0/FFFFFF?text=OBRA+2'">
+                    <div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold text-xl uppercase tracking-widest px-4 text-center">Piso Radiante Residencial - Pinamar Norte</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-video">
+                    <img src="img/obra3.jpg" alt="Piso Radiante Parque Leloir" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/0E08A0/FFFFFF?text=OBRA+3'">
+                    <div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold text-xl uppercase tracking-widest px-4 text-center">Piso Radiante Residencial - Parque Leloir</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-video">
+                    <img src="img/obra4.jpg" alt="Sala de Máquinas - Villa Gesell Sur" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/0E08A0/FFFFFF?text=OBRA+4'">
+                    <div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold text-xl uppercase tracking-widest px-4 text-center">Sala de Máquinas - Villa Gesell Sur</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-video">
+                    <img src="img/obra5.jpeg" alt="Gas Vdo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/0E08A0/FFFFFF?text=OBRA+5'">
+                    <div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold text-xl uppercase tracking-widest px-4 text-center">Instalación Gas Edificio Residencial - Vuelta de Obligado</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-video">
+                    <img src="img/obra6.jpeg" alt="Edificio Jade" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/0E08A0/FFFFFF?text=OBRA+6'">
+                    <div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold text-xl uppercase tracking-widest px-4 text-center">Complejo Jade - Instalación Completa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 bg-neutralBg">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
+                <div class="bg-primary p-12 text-white md:w-2/5 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-4xl font-extrabold mb-6 leading-tight">Hablemos de tu Proyecto</h2>
+                        <p class="text-blue-100 mb-10 font-light text-lg">
+                            Nuestro equipo técnico está listo para brindarte el mejor asesoramiento.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-center space-x-6">
+                            <div class="bg-accent w-12 h-12 rounded-full flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase font-bold text-blue-300">Email</p>
+                                <p class="font-semibold">info.thermarclima@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-6">
+                            <div class="bg-accent w-12 h-12 rounded-full flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase font-bold text-blue-300">Ubicación</p>
+                                <p class="font-semibold">CABA - GBA y Costa Atlántica</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-12 md:w-3/5">
+                    <form action="https://formspree.io/f/mwvnpqgr" method="POST" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Nombre Completo</label>
+                                <input type="text" name="nombre" required class="w-full border-b-2 border-gray-100 py-3 focus:outline-none focus:border-primary transition-colors bg-transparent placeholder-gray-300" placeholder="Ej: Juan Pérez">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Teléfono</label>
+                                <input type="tel" name="telefono" required class="w-full border-b-2 border-gray-100 py-3 focus:outline-none focus:border-primary transition-colors bg-transparent placeholder-gray-300" placeholder="11 2233-4455">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Email</label>
+                            <input type="email" name="email" required class="w-full border-b-2 border-gray-100 py-3 focus:outline-none focus:border-primary transition-colors bg-transparent placeholder-gray-300" placeholder="tu@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Mensaje</label>
+                            <textarea name="mensaje" rows="4" required class="w-full border-b-2 border-gray-100 py-3 focus:outline-none focus:border-primary transition-colors bg-transparent resize-none placeholder-gray-300" placeholder="Contanos brevemente tu necesidad..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-accent hover:bg-red-800 text-white font-bold py-5 rounded-xl shadow-xl transition-all active:scale-95 uppercase tracking-widest text-sm">
+                            Enviar Consulta
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-16 border-t-4 border-accent">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 text-center md:text-left">
+                
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="bg-white p-3 rounded-xl mb-6 inline-block w-fit">
+                        <img src="img/logo.png" alt="Thermarclima" class="h-12 w-auto object-contain">
+                    </div>
+                    <p class="text-blue-200 text-sm leading-relaxed mb-6">
+                        Comprometidos con la eficiencia energética y el confort en cada hogar.
+                    </p>
+                    <div class="text-xs text-blue-300">
+                        &copy; 2026 Thermarclima.<br>Todos los derechos reservados.
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 uppercase text-accent tracking-wider">Nuestras Sucursales</h4>
+                    
+                    <div class="space-y-6 text-sm text-blue-100">
+                        <div>
+                            <p class="font-bold text-white text-base mb-1">Villa Gesell</p>
+                            <div class="flex flex-col md:block">
+                                <span><i class="fa-solid fa-location-dot mr-2 text-accent"></i>Av. Buenos Aires 491</span>
+                                <a href="tel:02255457088" class="block mt-1 hover:text-white transition-colors">
+                                    <i class="fa-solid fa-phone mr-2 text-accent"></i>02255 457088
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-blue-900/30">
+                            <p class="font-bold text-white text-base mb-1">Pinamar</p>
+                            <div class="flex flex-col md:block">
+                                <span><i class="fa-solid fa-location-dot mr-2 text-accent"></i>De la Corvina 1320</span>
+                                <a href="tel:02254485120" class="block mt-1 hover:text-white transition-colors">
+                                    <i class="fa-solid fa-phone mr-2 text-accent"></i>02254 485120
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-blue-900/40 p-6 rounded-2xl mb-8 border border-blue-800">
+                        <h4 class="text-sm font-bold uppercase text-accent mb-2">Servicio Técnico</h4>
+                        <a href="tel:02267525080" class="text-2xl font-black text-white hover:text-blue-200 transition-colors flex items-center justify-center md:justify-start gap-2">
+                            <i class="fa-solid fa-screwdriver-wrench text-lg"></i>
+                            02267 525080
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col gap-6">
+                        <div>
+                            <h4 class="text-sm font-bold mb-4 uppercase text-blue-300">Seguinos</h4>
+                            <div class="flex justify-center md:justify-start space-x-6 text-3xl">
+                                <a href="https://www.instagram.com/thermarclima" target="_blank" class="hover:text-accent transition-colors transform hover:scale-110 duration-200">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="text-sm text-blue-300 pt-4 border-t border-blue-900/30">
+                            <a href="#inicio" class="hover:text-white mr-3">Inicio</a> • 
+                            <a href="#servicios" class="hover:text-white mx-3">Servicios</a> • 
+                            <a href="#contacto" class="hover:text-white ml-3">Contacto</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5491165494071" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform active:scale-90" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Vanilla JS Logic -->
+    <script>
+        // Lógica de Scroll para el Navbar
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+                header.classList.remove('bg-transparent', 'py-4');
+            } else {
+                header.classList.remove('header-scrolled');
+                header.classList.add('bg-transparent', 'py-4');
+            }
+        });
+
+        // Controles de Menú Mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = mobileMenu.querySelectorAll('a');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        menuClose.addEventListener('click', closeMenu);
+        menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+        }
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
