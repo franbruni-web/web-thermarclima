@@ -87,24 +87,34 @@
 <body class="bg-neutralBg font-sans text-gray-800">
 
     <!-- Navbar -->
-    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm transition-all duration-300">
-        <div class="container mx-auto px-6 flex justify-between items-center">
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center py-3">
+            
             <a href="#inicio" class="flex items-center">
-                <!-- LOGO: Reemplazar logo.png en tu carpeta -->
-                <img src="img/logo.png" alt="Logo Thermarclima" class="h-20 w-auto object-contain">
+                <img src="img/logo.png" alt="Logo Thermarclima" class="h-16 w-auto object-contain">
             </a>
             
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider">
-                <a href="#inicio" class="nav-link text-[#242021] hover:text-accent transition-colors">Inicio</a>
-                <a href="#servicios" class="nav-link text-[#242021] hover:text-accent transition-colors">Servicios</a>
-                <a href="#proyectos" class="nav-link text-[#242021] hover:text-accent transition-colors">Proyectos</a>
-                <a href="#contacto" class="nav-link text-[#242021] hover:text-accent transition-colors">Contacto</a>
+            <nav class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-wider">
+                <a href="#inicio" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Inicio</a>
+                <a href="#servicios" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Servicios</a>
+                <a href="#proyectos" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Proyectos</a>
+                <a href="#contacto" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Contacto</a>
             </nav>
 
-            <button id="menu-toggle" class="md:hidden mobile-menu-btn text-white text-2xl focus:outline-none">
+            <button id="menu-toggle" class="md:hidden text-[#242021] text-3xl focus:outline-none p-2">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-[#0E08A0] text-white flex flex-col items-center justify-center space-y-8 text-2xl font-bold uppercase md:hidden transition-opacity duration-300">
+        <button id="menu-close" class="absolute top-6 right-6 text-4xl hover:text-[#AA0B1A] transition-colors">&times;</button>
+        
+        <a href="#inicio" class="mobile-link hover:text-[#AA0B1A] transition-colors">Inicio</a>
+        <a href="#servicios" class="mobile-link hover:text-[#AA0B1A] transition-colors">Servicios</a>
+        <a href="#proyectos" class="mobile-link hover:text-[#AA0B1A] transition-colors">Proyectos</a>
+        <a href="#contacto" class="mobile-link hover:text-[#AA0B1A] transition-colors">Contacto</a>
+    </div>
     </header>
 
     <!-- Menu Mobile -->
@@ -455,5 +465,30 @@
         }
     </script>
 <script type="module" src="/index.tsx"></script>
+
+<script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Función para abrir
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        // Función para cerrar con la X
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Función para cerrar al tocar un enlace (para que no quede abierto)
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
+    
 </html>
