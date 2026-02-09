@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thermarclima | Calefacción Central e Ingeniería</title>
     
-    <!-- Google Fonts: Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
@@ -34,115 +31,60 @@
     </script>
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Barra de desplazamiento personalizada */
+        html { scroll-behavior: smooth; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #0E08A0; }
         ::-webkit-scrollbar-thumb:hover { background: #AA0B1A; }
-
-        .brand-logo {
-            filter: grayscale(1);
-            opacity: 0.6;
-            transition: all 0.3s ease;
-        }
-        .brand-logo:hover {
-            filter: grayscale(0);
-            opacity: 1;
-        }
-
-        .header-scrolled {
-            background-color: white !important;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            padding-top: 0.5rem !important;
-            padding-bottom: 0.5rem !important;
-        }
-        
-        .header-scrolled .nav-link { color: #1f2937 !important; }
-        .header-scrolled .nav-link:hover { color: #AA0B1A !important; }
-        .header-scrolled .mobile-menu-btn { color: #0E08A0 !important; }
-
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        #mobile-menu {
-            transition: transform 0.3s ease-in-out;
-            transform: translateX(100%);
-        }
-        #mobile-menu.active {
-            transform: translateX(0);
-        }
     </style>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body class="bg-neutralBg font-sans text-gray-800">
 
-    <!-- Navbar -->
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
-    <div class="container mx-auto px-6 flex justify-between items-center py-4">
-        
-        <a href="#inicio" class="flex items-center">
-            <img src="img/logo.png" alt="Logo Thermarclima" class="h-12 md:h-16 w-auto object-contain">
-        </a>
-        
-        <nav class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-wider">
-            <a href="#inicio" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Inicio</a>
-            <a href="#servicios" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Servicios</a>
-            <a href="#proyectos" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Proyectos</a>
-            <a href="#contacto" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Contacto</a>
-        </nav>
+        <div class="container mx-auto px-6 flex justify-between items-center py-4">
+            
+            <a href="#inicio" class="flex items-center">
+                <img src="img/logo.png" alt="Logo Thermarclima" class="h-12 md:h-16 w-auto object-contain">
+            </a>
+            
+            <nav class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-wider">
+                <a href="#inicio" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Inicio</a>
+                <a href="#servicios" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Servicios</a>
+                <a href="#proyectos" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Proyectos</a>
+                <a href="#contacto" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Contacto</a>
+            </nav>
 
-        <button onclick="document.getElementById('mobile-menu').classList.remove('hidden')" class="md:hidden text-[#242021] text-3xl focus:outline-none p-2">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-    </div>
+            <button onclick="document.getElementById('mobile-menu').classList.remove('hidden')" class="md:hidden text-[#242021] text-3xl focus:outline-none p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
 
-    <div id="mobile-menu" class="hidden fixed inset-0 z-[100] bg-[#0E08A0] text-white flex flex-col items-center justify-center space-y-8 text-2xl font-bold uppercase md:hidden">
-        
-        <button onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="absolute top-6 right-6 text-5xl hover:text-[#AA0B1A] transition-colors p-4">
-            &times;
-        </button>
-        
-        <a href="#inicio" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#AA0B1A] transition-colors">Inicio</a>
-        <a href="#servicios" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#AA0B1A] transition-colors">Servicios</a>
-        <a href="#proyectos" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#AA0B1A] transition-colors">Proyectos</a>
-        <a href="#contacto" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#AA0B1A] transition-colors">Contacto</a>
-    </div>
-</header>
+        <div id="mobile-menu" class="hidden fixed inset-0 z-[100] bg-[#0E08A0] text-white flex flex-col items-center justify-center space-y-8 text-2xl font-bold uppercase md:hidden">
+            
+            <button onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="absolute top-6 right-6 text-5xl hover:text-[#AA0B1A] transition-colors p-4">
+                &times;
+            </button>
+            
+            <a href="#inicio" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#AA0B1A] transition-colors">Inicio</a>
+            <a href="#servicios" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#AA0B1A] transition-colors">Servicios</a>
+            <a href="#proyectos" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#AA0B1A] transition-colors">Proyectos</a>
+            <a href="#contacto" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-[#AA0B1A] transition-colors">Contacto</a>
+        </div>
+    </header>
 
-    <!-- Menu Mobile -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-primary text-white flex flex-col items-center justify-center space-y-8 text-2xl font-bold uppercase md:hidden">
-        <button id="menu-close" class="absolute top-6 right-6 text-4xl">&times;</button>
-        <a href="#inicio" class="hover:text-accent">Inicio</a>
-        <a href="#servicios" class="hover:text-accent">Servicios</a>
-        <a href="#proyectos" class="hover:text-accent">Proyectos</a>
-        <a href="#contacto" class="hover:text-accent">Contacto</a>
-    </div>
-
-    <!-- Hero Section -->
     <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
-        <!-- IMAGEN HERO: Reemplazar hero1.jpg en tu carpeta -->
         <div id="hero-bg" class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('img/hero1.jpg');">
             <div class="absolute inset-0 bg-primary/70 mix-blend-multiply"></div>
         </div>
 
         <div class="container mx-auto px-6 relative z-10 text-center text-white">
-            <h1 class="text-4xl md:text-7xl font-extrabold mb-4 tracking-tight animate-fade-in-up">
+            <h1 class="text-4xl md:text-7xl font-extrabold mb-4 tracking-tight">
                 THERMARCLIMA CALEFACCIÓN
             </h1>
-            <p class="text-xl md:text-2xl font-light mb-10 max-w-2xl mx-auto opacity-90 animate-fade-in-up" style="animation-delay: 0.2s;">
+            <p class="text-xl md:text-2xl font-light mb-10 max-w-2xl mx-auto opacity-90">
                 Tu clima ideal, nuestra especialidad en ingeniería térmica.
             </p>
-            <div class="animate-fade-in-up" style="animation-delay: 0.4s;">
+            <div>
                 <a href="#contacto" class="inline-block bg-accent hover:bg-red-800 text-white font-bold py-4 px-10 rounded shadow-lg transition-all transform hover:scale-105 active:scale-95 uppercase tracking-widest text-sm">
                     Solicitar Cotización
                 </a>
@@ -150,8 +92,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-<section id="servicios" class="py-24 bg-white relative overflow-hidden">
+    <section id="servicios" class="py-24 bg-white relative overflow-hidden">
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 z-0"></div>
         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 bg-red-50 rounded-full blur-3xl opacity-50 z-0"></div>
 
@@ -212,34 +153,22 @@
         </div>
     </section>
 
-    <!-- Brands Section -->
     <section class="py-20 bg-neutralBg">
         <div class="container mx-auto px-6 text-center">
             <h3 class="text-2xl font-bold text-primary mb-12 uppercase tracking-wide">Marcas Líderes que Confían en Nosotros</h3>
-            <!-- MARCAS: Reemplazar cada archivo .png en tu carpeta -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center opacity-80">
-                
                 <img src="img/marca-caldaia.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
-                
                 <img src="img/marca-saladillo.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
-                
                 <img src="img/marca-daikin.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
-                
                 <img src="img/marca-giacomini.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
-                
                 <img src="img/marca-awaduct.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
-                
                 <img src="img/marca-vulcano.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
-                
                 <img src="img/marca-motorarg.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
-                
                 <img src="img/marca-ansal.png" class="h-16 w-auto object-contain mx-auto grayscale hover:grayscale-0 transition-all duration-300">
-                
             </div>
         </div>
     </section>
 
-    <!-- Projects Portfolio (6 Obras) -->
     <section id="proyectos" class="py-24 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -247,7 +176,6 @@
                 <div class="w-20 h-1 bg-accent mx-auto"></div>
             </div>
 
-            <!-- OBRAS: Reemplazar obra1.jpg hasta obra6.jpg en tu carpeta -->
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-video">
                     <img src="img/obra1.jpg" alt="Piso Radiante Cariló" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/0E08A0/FFFFFF?text=OBRA+1'">
@@ -289,7 +217,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contacto" class="py-24 bg-neutralBg">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
@@ -352,7 +279,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-primary text-white py-16 border-t-4 border-accent">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-12 text-center md:text-left">
@@ -426,48 +352,9 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/5491165494071" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform active:scale-90" aria-label="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Vanilla JS Logic -->
-    <script>
-        // Lógica de Scroll para el Navbar
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('header-scrolled');
-                header.classList.remove('bg-transparent', 'py-4');
-            } else {
-                header.classList.remove('header-scrolled');
-                header.classList.add('bg-transparent', 'py-4');
-            }
-        });
-
-        // Controles de Menú Mobile
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuClose = document.getElementById('menu-close');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuLinks = mobileMenu.querySelectorAll('a');
-
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        const closeMenu = () => {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        };
-
-        menuClose.addEventListener('click', closeMenu);
-        menuLinks.forEach(link => link.addEventListener('click', closeMenu));
-
-        }
-    </script>
-<script type="module" src="/index.tsx"></script>
-
 </body>
-    
 </html>
