@@ -116,6 +116,7 @@
             
             <nav class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-wider">
                 <a href="#inicio" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Inicio</a>
+                <a href="#nosotros" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Nosotros</a>
                 <a href="#servicios" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Servicios</a>
                 <a href="#proyectos" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Proyectos</a>
                 <a href="#contacto" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Contacto</a>
@@ -135,6 +136,9 @@
             <div class="flex flex-col items-center space-y-8 text-center">
                 <a href="#inicio" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="text-white text-2xl font-bold uppercase tracking-widest hover:text-[#AA0B1A] transition-colors">
                     Inicio
+                </a>
+                <a href="#nosotros" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="text-white text-2xl font-bold uppercase tracking-widest hover:text-[#AA0B1A] transition-colors">
+                    Nosotros
                 </a>
                 <a href="#servicios" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="text-white text-2xl font-bold uppercase tracking-widest hover:text-[#AA0B1A] transition-colors">
                     Servicios
@@ -167,6 +171,61 @@
                 <a href="#contacto" class="inline-block bg-accent hover:bg-red-800 text-white font-bold py-4 px-10 rounded shadow-lg transition-all transform hover:scale-105 active:scale-95 uppercase tracking-widest text-sm">
                     Solicitar Cotización
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="py-24 bg-neutralBg relative overflow-hidden">
+        <div class="container mx-auto px-6 max-w-6xl relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                
+                <div class="lg:w-1/2" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="text-accent font-bold uppercase tracking-widest mb-4 text-sm">Nuestra Trayectoria</h3>
+                    <h2 class="text-4xl md:text-5xl font-black text-primary mb-6 leading-tight">Más de 20 Años Construyendo Confort</h2>
+                    <div class="w-20 h-1 bg-accent mb-8"></div>
+                    
+                    <div class="text-gray-600 space-y-6 text-lg leading-relaxed mb-10">
+                        <p>Entendemos que la climatización no es solo una instalación, sino el pilar del bienestar de cada familia. Como empresa familiar, nos impulsa un único objetivo: tu total satisfacción.</p>
+                        <p>Acompañamos a dueños y grupos desarrolladores desde el diseño inicial hasta la puesta en marcha, garantizando soluciones personalizadas de excelencia. Ya sea mediante sistemas tradicionales de piso radiante en residencias unifamiliares, o incorporando tecnología de punta como las calderas sin fuego <strong>UNICAL de Caldaia</strong> para edificios multifamiliares, diseñamos el futuro del confort.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 group hover:shadow-md transition-shadow">
+                            <div class="w-14 h-14 bg-blue-50 text-primary rounded-xl flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-black text-primary">+15</h4>
+                                <p class="text-[10px] sm:text-xs font-bold uppercase text-gray-400">Edificios Integrales (CABA y Alrededores)</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 group hover:shadow-md transition-shadow">
+                            <div class="w-14 h-14 bg-red-50 text-accent rounded-xl flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-ranking-star"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-black text-primary">+20 Años</h4>
+                                <p class="text-[10px] sm:text-xs font-bold uppercase text-gray-400">Liderazgo en Costa Atlántica</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 relative" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="absolute inset-0 bg-primary translate-x-4 translate-y-4 rounded-3xl opacity-10"></div>
+                    <img src="img/nosotros.webp" alt="Equipo Thermarclima" class="relative rounded-3xl shadow-2xl object-cover w-full h-[350px] sm:h-[500px] border border-gray-100">
+                    
+                    <div class="absolute -bottom-6 -left-2 sm:-left-8 bg-white p-4 sm:p-6 rounded-2xl shadow-2xl border border-gray-100 flex items-center gap-3 sm:gap-4 z-20 hover:-translate-y-1 transition-transform">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-accent text-white rounded-full flex items-center justify-center text-lg sm:text-xl">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div>
+                            <p class="font-black text-primary text-base sm:text-lg">100% Satisfacción</p>
+                            <p class="text-[10px] sm:text-xs font-bold text-gray-500 uppercase">Garantizada</p>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
