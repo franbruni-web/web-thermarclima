@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Nuestras Obras | Thermarclima - Portfolio de Proyectos</title>
+    
+    <meta name="description" content="Galería completa de obras realizadas por Thermarclima: Piso Radiante, Salas de Máquinas e Instalaciones Integrales en Pinamar, Cariló, Villa Gesell y CABA.">
+    
+    <meta property="og:title" content="Nuestras Obras | Thermarclima">
+    <meta property="og:description" content="Galería completa de proyectos de climatización y calefacción realizados por Thermarclima.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.thermarclima.com.ar/obras.html">
+    <meta property="og:image" content="https://www.thermarclima.com.ar/img/favicon.png">
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="canonical" href="https://www.thermarclima.com.ar/obras.html">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+    <meta name="theme-color" content="#0E08A0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 100px;
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #0E08A0; }
+        ::-webkit-scrollbar-thumb:hover { background: #AA0B1A; }
+
+        .filter-btn.active {
+            background-color: #0E08A0;
+            color: white;
+        }
+        .project-card {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .project-card.hidden-card {
+            opacity: 0;
+            transform: scale(0.8);
+            position: absolute;
+            pointer-events: none;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .gallery-thumb {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-thumb:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-neutralBg font-sans text-gray-800">
+
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center py-4">
+            
+            <a href="index.html" class="flex items-center">
+                <img src="img/logo.webp" alt="Logo Thermarclima" class="h-12 md:h-16 w-auto object-contain">
+            </a>
+            
+            <nav class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-wider">
+                <a href="index.html" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Inicio</a>
+                <a href="index.html#nosotros" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Nosotros</a>
+                <a href="index.html#servicios" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Servicios</a>
+                <a href="obras.html" class="text-[#AA0B1A] font-extrabold border-b-2 border-[#AA0B1A] pb-1">Obras</a>
+                <a href="index.html#contacto" class="text-[#242021] hover:text-[#AA0B1A] transition-colors">Contacto</a>
+            </nav>
+
+            <button aria-label="Abrir menú" onclick="document.getElementById('mobile-menu').classList.remove('hidden')" class="md:hidden text-[#242021] text-3xl focus:outline-none p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden fixed inset-0 z-[100] bg-[#0E08A0] h-screen w-screen flex flex-col items-center justify-center space-y-10">
+            
+            <button aria-label="Cerrar menú" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="absolute top-8 right-8 text-white text-5xl hover:text-[#AA0B1A] transition-colors focus:outline-none">
+                &times;
+            </button>
+            
+            <div class="flex flex-col items-center space-y-8 text-center">
+                <a href="index.html" class="text-white text-2xl font-bold uppercase tracking-widest hover:text-[#AA0B1A] transition-colors">
+                    Inicio
+                </a>
+                <a href="index.html#nosotros" class="text-white text-2xl font-bold uppercase tracking-widest hover:text-[#AA0B1A] transition-colors">
+                    Nosotros
+                </a>
+                <a href="index.html#servicios" class="text-white text-2xl font-bold uppercase tracking-widest hover:text-[#AA0B1A] transition-colors">
+                    Servicios
+                </a>
+                <a href="obras.html" class="text-[#AA0B1A] text-2xl font-bold uppercase tracking-widest">
+                    Obras
+                </a>
+                <a href="index.html#contacto" class="text-white text-2xl font-bold uppercase tracking-widest hover:text-[#AA0B1A] transition-colors">
+                    Contacto
+                </a>
+            </div>
+
+            <div class="absolute bottom-20 w-16 h-1 bg-[#AA0B1A] rounded-full"></div>
+        </div>
+    </header>
+
+    <!-- Hero Mini -->
+    <section class="relative pt-32 pb-20 bg-primary overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary via-[#0a0670] to-[#060450] opacity-90"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl -ml-36 -mb-36"></div>
+        
+        <div class="container mx-auto px-6 relative z-10 text-center text-white" data-aos="fade-up" data-aos-duration="800">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">Nuestras Obras</h1>
+            <p class="text-lg md:text-xl font-light max-w-2xl mx-auto opacity-80">
+                Más de 20 años de trayectoria reflejados en cada proyecto. Explorá nuestra galería de trabajos realizados.
+            </p>
+            <div class="w-20 h-1 bg-accent mx-auto mt-8 rounded-full"></div>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="py-8 bg-white border-b border-gray-100 sticky top-[72px] z-40 backdrop-blur-md bg-white/95">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-3" id="filter-buttons">
+                <button class="filter-btn active px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider border-2 border-primary transition-all duration-300 hover:bg-primary hover:text-white" data-filter="all">
+                    Todas
+                </button>
+                <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider border-2 border-primary text-primary transition-all duration-300 hover:bg-primary hover:text-white" data-filter="calefaccion">
+                    <i class="fa-solid fa-fire-flame-curved mr-1"></i> Calefacción
+                </button>
+                <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider border-2 border-primary text-primary transition-all duration-300 hover:bg-primary hover:text-white" data-filter="sala">
+                    <i class="fa-solid fa-gears mr-1"></i> Salas de Máquinas
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grilla de Proyectos -->
+    <section class="py-16 bg-neutralBg">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+
+                <!-- Proyecto 1: Acassuso -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 group" data-category="calefaccion" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openProjectGallery('acassuso')">
+                        <img src="img/obras/calefaccion-piso-radiante-residencial-acasusso-1.webp" loading="lazy" alt="Piso Radiante Residencial - Acassuso" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block bg-accent text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2">Calefacción</span>
+                            <h3 class="text-white font-bold text-lg leading-tight">Piso Radiante Residencial</h3>
+                            <p class="text-white/70 text-sm">Acassuso</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 text-primary text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-images"></i> 15
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: Cariló -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 group" data-category="calefaccion" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openProjectGallery('carilo')">
+                        <img src="img/obras/calefaccion-piso-radiante-residencial-carilo-1.webp" loading="lazy" alt="Piso Radiante Residencial - Cariló" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block bg-accent text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2">Calefacción</span>
+                            <h3 class="text-white font-bold text-lg leading-tight">Piso Radiante Residencial</h3>
+                            <p class="text-white/70 text-sm">Cariló</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 text-primary text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-images"></i> 10
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: Costa Esmeralda -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 group" data-category="calefaccion" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openProjectGallery('costa-esmeralda')">
+                        <img src="img/obras/calefaccion-piso-radiante-residencial-costa-esmeralda-1.webp" loading="lazy" alt="Piso Radiante Residencial - Costa Esmeralda" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block bg-accent text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2">Calefacción</span>
+                            <h3 class="text-white font-bold text-lg leading-tight">Piso Radiante Residencial</h3>
+                            <p class="text-white/70 text-sm">Costa Esmeralda</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 text-primary text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-images"></i> 8
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4: Highland Country Club -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 group" data-category="calefaccion" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openProjectGallery('highland')">
+                        <img src="img/obras/calefaccion-piso-radiante-residencial-highland-country-club-1.webp" loading="lazy" alt="Piso Radiante Residencial - Country Club Highland Park" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block bg-accent text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2">Calefacción</span>
+                            <h3 class="text-white font-bold text-lg leading-tight">Piso Radiante Residencial</h3>
+                            <p class="text-white/70 text-sm">Country Club Highland Park</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 text-primary text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-images"></i> 8
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 5: Sala Cariló -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 group" data-category="sala" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openProjectGallery('sala-carilo')">
+                        <img src="img/obras/sala-casa-carilo-residencial-1.webp" loading="lazy" alt="Sala de Máquinas - Residencia Unifamiliar - Cariló" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2">Sala de Máquinas</span>
+                            <h3 class="text-white font-bold text-lg leading-tight">Residencia Unifamiliar</h3>
+                            <p class="text-white/70 text-sm">Cariló</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 text-primary text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-images"></i> 6
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 6: Sala Jade Colonia Marina -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 group" data-category="sala" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openProjectGallery('sala-jade')">
+                        <img src="img/obras/sala-jade-colonia-marina-1.webp" loading="lazy" alt="Sala de Máquinas - Edificio Multifamiliar - Colonia Marina" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2">Sala de Máquinas</span>
+                            <h3 class="text-white font-bold text-lg leading-tight">Edificio Multifamiliar</h3>
+                            <p class="text-white/70 text-sm">Colonia Marina</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 text-primary text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-images"></i> 3
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 7: Sala Zelena Voda -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 group" data-category="sala" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openProjectGallery('sala-zelena')">
+                        <img src="img/obras/sala-zelena-voda-villa-gesell-sur-1.webp" loading="lazy" alt="Sala de Máquinas - Edificio Multifamiliar - Villa Gesell Sur" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2">Sala de Máquinas</span>
+                            <h3 class="text-white font-bold text-lg leading-tight">Edificio Multifamiliar</h3>
+                            <p class="text-white/70 text-sm">Villa Gesell Sur</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 text-primary text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1">
+                            <i class="fa-solid fa-images"></i> 4
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary to-[#060450]"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">¿Tenés un proyecto en mente?</h2>
+            <p class="text-blue-200 text-lg mb-8 max-w-xl mx-auto">Nuestro equipo técnico está listo para asesorarte con la mejor solución.</p>
+            <a href="index.html#contacto" class="inline-block bg-accent hover:bg-red-800 text-white font-bold py-4 px-10 rounded shadow-lg transition-all transform hover:scale-105 active:scale-95 uppercase tracking-widest text-sm">
+                Solicitar Cotización
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-16 border-t-4 border-accent">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 text-center md:text-left">
+                
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="bg-white p-3 rounded-xl mb-6 inline-block w-fit">
+                        <img src="img/logo.webp" alt="Thermarclima" class="h-12 w-auto object-contain">
+                    </div>
+                    <p class="text-blue-200 text-sm leading-relaxed mb-6">
+                        Comprometidos con la eficiencia energética y el confort en cada hogar.
+                    </p>
+                    <div class="text-xs text-blue-300">
+                        &copy; 2026 Thermarclima.<br>Todos los derechos reservados.
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 uppercase text-accent tracking-wider">Nuestras Sucursales</h4>
+                    
+                    <div class="space-y-6 text-sm text-blue-100">
+                        <div>
+                            <p class="font-bold text-white text-base mb-1">Villa Gesell</p>
+                            <div class="flex flex-col md:block">
+                                <span><i class="fa-solid fa-location-dot mr-2 text-accent"></i>Av. Buenos Aires 491</span>
+                                <a href="tel:+5492255457088" class="block mt-1 mb-1 hover:text-white transition-colors">
+                                    <i class="fa-solid fa-phone mr-2 text-accent"></i>02255 457088
+                                </a>
+                                <span class="block text-xs mt-1 text-blue-300"><i class="fa-solid fa-clock mr-2"></i>Lun a Vie de 08:30 a 13:30 hs</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-blue-900/30">
+                            <p class="font-bold text-white text-base mb-1">Pinamar</p>
+                            <div class="flex flex-col md:block">
+                                <span><i class="fa-solid fa-location-dot mr-2 text-accent"></i>Rivadavia 1304 - Local 4</span>
+                                <a href="tel:+5492254485120" class="block mt-1 mb-1 hover:text-white transition-colors">
+                                    <i class="fa-solid fa-phone mr-2 text-accent"></i>02254 485120
+                                </a>
+                                <span class="block text-xs mt-1 text-blue-300"><i class="fa-solid fa-clock mr-2"></i>Lun a Vie de 08:30 a 17:00 hs</span>
+                                <span class="block text-xs text-blue-300 pl-5">Sábados de 08:30 a 12:30 hs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-blue-900/40 p-6 rounded-2xl mb-8 border border-blue-800">
+                        <h4 class="text-sm font-bold uppercase text-accent mb-2">Servicio Técnico</h4>
+                        <a href="tel:+5492267525080" class="text-2xl font-black text-white hover:text-blue-200 transition-colors flex items-center justify-center md:justify-start gap-2">
+                            <i class="fa-solid fa-screwdriver-wrench text-lg"></i>
+                            02267 525080
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col gap-6">
+                        <div>
+                            <h4 class="text-sm font-bold mb-4 uppercase text-blue-300">Seguinos</h4>
+                            <div class="flex justify-center md:justify-start space-x-6 text-3xl">
+                                <a href="https://www.instagram.com/thermarclima" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors transform hover:scale-110 duration-200">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/company/thermarclima/about/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors transform hover:scale-110 duration-200">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="text-sm text-blue-300 pt-4 border-t border-blue-900/30">
+                            <a href="index.html" class="hover:text-white mr-3">Inicio</a> • 
+                            <a href="index.html#servicios" class="hover:text-white mx-3">Servicios</a> • 
+                            <a href="index.html#contacto" class="hover:text-white ml-3">Contacto</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/5491176597935" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform active:scale-90" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Lightbox con Navegación -->
+    <div id="lightbox" class="fixed inset-0 z-[200] bg-black/95 hidden items-center justify-center opacity-0 transition-opacity duration-300" style="display:none;">
+        <button id="lb-close" aria-label="Cerrar visor" class="absolute top-4 right-4 md:top-6 md:right-6 text-white text-4xl md:text-5xl hover:text-accent transition-colors focus:outline-none z-10">&times;</button>
+        
+        <button id="lb-prev" aria-label="Foto anterior" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 text-white text-3xl md:text-5xl hover:text-accent transition-colors focus:outline-none z-10">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        
+        <button id="lb-next" aria-label="Foto siguiente" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 text-white text-3xl md:text-5xl hover:text-accent transition-colors focus:outline-none z-10">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        
+        <img id="lb-img" src="" alt="Vista ampliada" class="max-w-[92%] max-h-[85vh] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
+        
+        <div class="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 text-white text-sm font-bold bg-black/50 px-4 py-2 rounded-full">
+            <span id="lb-counter"></span>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 50 });
+
+        // ========== Datos de Proyectos ==========
+        const projects = {
+            'acassuso': {
+                title: 'Piso Radiante Residencial - Acassuso',
+                images: Array.from({length: 15}, (_, i) => `img/obras/calefaccion-piso-radiante-residencial-acasusso-${i+1}.webp`)
+            },
+            'carilo': {
+                title: 'Piso Radiante Residencial - Cariló',
+                images: Array.from({length: 10}, (_, i) => `img/obras/calefaccion-piso-radiante-residencial-carilo-${i+1}.webp`)
+            },
+            'costa-esmeralda': {
+                title: 'Piso Radiante Residencial - Costa Esmeralda',
+                images: Array.from({length: 8}, (_, i) => `img/obras/calefaccion-piso-radiante-residencial-costa-esmeralda-${i+1}.webp`)
+            },
+            'highland': {
+                title: 'Piso Radiante Residencial - Country Club Highland Park',
+                images: [1,2,3,4,6,7,8,9].map(n => `img/obras/calefaccion-piso-radiante-residencial-highland-country-club-${n}.webp`)
+            },
+            'sala-carilo': {
+                title: 'Sala de Máquinas - Residencia Unifamiliar - Cariló',
+                images: Array.from({length: 6}, (_, i) => `img/obras/sala-casa-carilo-residencial-${i+1}.webp`)
+            },
+            'sala-jade': {
+                title: 'Sala de Máquinas - Edificio Multifamiliar - Colonia Marina',
+                images: Array.from({length: 3}, (_, i) => `img/obras/sala-jade-colonia-marina-${i+1}.webp`)
+            },
+            'sala-zelena': {
+                title: 'Sala de Máquinas - Edificio Multifamiliar - Villa Gesell Sur',
+                images: Array.from({length: 4}, (_, i) => `img/obras/sala-zelena-voda-villa-gesell-sur-${i+1}.webp`)
+            }
+        };
+
+        // ========== Filtro por Categoría ==========
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+
+                cards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.classList.remove('hidden-card');
+                        card.style.display = '';
+                    } else {
+                        card.classList.add('hidden-card');
+                        setTimeout(() => { card.style.display = 'none'; }, 400);
+                    }
+                });
+            });
+        });
+
+        // ========== Lightbox con Navegación ==========
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lb-img');
+        const lbCounter = document.getElementById('lb-counter');
+        const lbClose = document.getElementById('lb-close');
+        const lbPrev = document.getElementById('lb-prev');
+        const lbNext = document.getElementById('lb-next');
+
+        let currentImages = [];
+        let currentIndex = 0;
+
+        function openProjectGallery(projectKey) {
+            const project = projects[projectKey];
+            if (!project) return;
+            currentImages = project.images;
+            currentIndex = 0;
+            showImage();
+            lightbox.style.display = 'flex';
+            lightbox.classList.remove('hidden');
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                lbImg.classList.remove('scale-95');
+            }, 10);
+        }
+
+        function showImage() {
+            lbImg.src = currentImages[currentIndex];
+            lbCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            lbImg.classList.add('scale-95');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+                lightbox.classList.add('hidden');
+            }, 300);
+        }
+
+        lbClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        lbPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+            showImage();
+        });
+
+        lbNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % currentImages.length;
+            showImage();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === 'none') return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length; showImage(); }
+            if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % currentImages.length; showImage(); }
+        });
+
+        // Swipe en móviles
+        let touchStartX = 0;
+        lightbox.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+        lightbox.addEventListener('touchend', (e) => {
+            const diff = e.changedTouches[0].screenX - touchStartX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) { currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length; }
+                else { currentIndex = (currentIndex + 1) % currentImages.length; }
+                showImage();
+            }
+        }, {passive: true});
+    </script>
+
+    <script src="/_vercel/insights/script.js" defer></script>
+</body>
+</html>
